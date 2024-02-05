@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: lg.pplmanagement.repository.ContactRepositoryTest
--------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.404 s -- in lg.pplmanagement.repository.ContactRepositoryTest

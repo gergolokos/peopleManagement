@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: lg.pplmanagement.repository.AddressRepositoryTest
--------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 3, Time elapsed: 0.007 s -- in lg.pplmanagement.repository.AddressRepositoryTest
