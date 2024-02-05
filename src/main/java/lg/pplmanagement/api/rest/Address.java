@@ -1,60 +1,63 @@
 package lg.pplmanagement.api.rest;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
 import java.util.Objects;
 
+@JsonDeserialize(builder = Address.Builder.class)
 public class Address {
-    private final Long id;
+    @JsonProperty("permanentAddress")
     private final String permanentAddress;
+    @JsonProperty("temporaryAddress")
     private final String temporaryAddress;
+    @JsonProperty("personId")
+    private final Long personId;
 
-    private final Person person;
-
-    public Long getId() {
-        return id;
-    }
-
+    @JsonProperty("permanentAddress")
     public String getPermanentAddress() {
         return permanentAddress;
     }
 
+    @JsonProperty("temporaryAddress")
     public String getTemporaryAddress() {
         return temporaryAddress;
     }
 
-    public Person getPerson() {
-        return person;
+    @JsonProperty("personId")
+    public Long getPersonId() {
+        return personId;
     }
 
-    Address(Builder builder) {
-        this.id = builder.id;
+    private Address(Builder builder) {
         this.permanentAddress = builder.permanentAddress;
         this.temporaryAddress = builder.temporaryAddress;
-        this.person = builder.person;
+        this.personId = builder.personId;
     }
 
     public static class Builder {
-        private Long id;
+        @JsonProperty("permanentAddress")
         private String permanentAddress;
+        @JsonProperty("temporaryAddress")
         private String temporaryAddress;
-        private Person person;
+        @JsonProperty("personId")
+        private Long personId;
 
-        public Builder setId(Long id) {
-            this.id = id;
-            return this;
-        }
-
+        @JsonProperty("permanentAddress")
         public Builder setPermanentAddress(String permanentAddress) {
             this.permanentAddress = permanentAddress;
             return this;
         }
 
+        @JsonProperty("temporaryAddress")
         public Builder setTemporaryAddress(String temporaryAddress) {
             this.temporaryAddress = temporaryAddress;
             return this;
         }
 
-        public Builder setPerson(Person person) {
-            this.person = person;
+        @JsonProperty("personId")
+        public Builder setPersonId(Long personId) {
+            this.personId = personId;
             return this;
         }
 
@@ -67,12 +70,14 @@ public class Address {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
             Builder builder = (Builder) o;
-            return Objects.equals(id, builder.id) && Objects.equals(permanentAddress, builder.permanentAddress) && Objects.equals(temporaryAddress, builder.temporaryAddress) && Objects.equals(person, builder.person);
+            return Objects.equals(permanentAddress, builder.permanentAddress) && Objects.equals(temporaryAddress, builder.temporaryAddress) && Objects.equals(personId, builder.personId);
         }
 
         @Override
         public int hashCode() {
-            return Objects.hash(id, permanentAddress, temporaryAddress, person);
+            return Objects.hash(permanentAddress, temporaryAddress, personId);
         }
     }
+
+
 }
