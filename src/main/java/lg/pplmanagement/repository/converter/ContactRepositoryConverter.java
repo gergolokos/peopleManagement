@@ -8,7 +8,7 @@ public class ContactRepositoryConverter extends RepositoryConverter<Contact, lg.
 
     private final PersonRepositoryConverter personRepositoryConverter;
 
-    ContactRepositoryConverter(PersonRepositoryConverter personRepositoryConverter) {
+    public ContactRepositoryConverter(PersonRepositoryConverter personRepositoryConverter) {
         this.personRepositoryConverter = personRepositoryConverter;
     }
 
@@ -31,5 +31,5 @@ public class ContactRepositoryConverter extends RepositoryConverter<Contact, lg.
                 .setPerson(personRepositoryConverter.convertToEntity(model.getPerson()))
                 .build();
     }
-    
+
 }
